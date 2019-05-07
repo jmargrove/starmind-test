@@ -1,0 +1,36 @@
+{
+  "name": "startmind-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^3.4.5"
+  },
+  "scripts": {
+    "build": "parcel watch src/index.ts --target node",
+    "dev": "nodemon dist/index.js"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
+    "nodemon": "^1.19.0",
+    "prettier": "^1.17.0",
+    "parcel-bundler": "^1.12.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,tsx,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
